@@ -1,0 +1,223 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+@font-face {
+    font-family: 'Cairo';  
+    src: url('../lib/fonts/Cairo-Regular.ttf');
+}
+
+body {
+    display: grid;
+    grid-template-areas: "header header header" "nav article article" "footer footer footer";
+    grid-template-rows: 125px 1fr 50px;
+    grid-template-columns: 20% 1fr;
+    grid-row-gap: 0;
+    grid-column-gap: 1px;
+    height: 100vh;
+    margin: 0;
+    background: rgba(128, 128, 128, 0.637);
+    font-family: Cairo;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+@media all and (max-width: 575px) {
+    body {
+        grid-template-areas: "header" "nav" "article" "footer";
+        grid-template-rows: 125px 1fr 1fr;
+        grid-template-columns: 1fr;
+    }
+}
+
+header,
+footer,
+article,
+nav {
+    padding: 1.2em;
+    background: white;
+}
+
+#pageHeader {
+    grid-area: header;
+}
+
+#pageFooter {
+    grid-area: footer;
+    text-align: right;
+}
+
+#mainArticle {
+    grid-area: article;
+}
+
+#mainNav {
+    grid-area: nav;
+}
+
+.headerStep {
+    grid-template-columns: 1fr;
+}
+
+.grid-one {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 1em;
+}
+
+.grid-two {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 1em;
+}
+
+.grid-three {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1em;
+}
+
+.grid-final {
+    display: grid; 
+    grid-template-columns: 20% 1fr;
+    grid-gap: 1em;
+}
+
+.items {
+    display: grid;
+    font-size: 5vm;
+    padding: .5em;
+    background: red;
+    text-align: right;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2vw;
+}
+
+.grid {
+}
+
+.item-label {
+    text-align: right;
+    vertical-align: middle;
+}
+
+.item-label-final{
+    text-align:left;
+}
+
+.item-check {
+    text-align: left;
+}
+
+.item-valid {
+    text-align: left;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border: 1px solid rgba(128, 128, 128, 0.637);
+    height: 2em;
+    color: gray;
+    font-family: inherit;
+}
+
+.control-label {
+    display: inline-block;
+    text-align: right;
+    color: gray;
+    margin-right: 1em;
+}
+
+.label-mark {
+    font-size: 9px;
+}
+
+.form-check-input {
+    vertical-align: middle;
+}
+
+.star {
+    color: rgb(75, 159, 255);
+    font-size: 20px;
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+.form-group {
+    text-align: right;
+    margin-right: 15%;
+    margin-top: 25%;
+}
+
+.btn-next {
+    background-color: rgb(75, 159, 255);
+    border: none;
+    color: white;
+    padding: 10px 24px;
+    display: inline-block;
+    cursor:pointer;
+}
+
+.btn-back {
+    background-color: white;
+    border: 1px solid rgba(128, 128, 128, 0.637);
+    color: black;
+    padding: 5px 24px;
+    display: inline-block;
+}
+
+.circle-blue {
+    width: 30px;
+    height: 30px;
+    background: rgb(38, 166, 252);
+    border-radius: 50%;
+    margin: 1em;
+    border-radius: 50%;
+    text-align: center;
+    color: white;
+    line-height: 30px;
+}
+
+.circle-white {
+    width: 30px;
+    height: 30px;
+    background: white;
+    border-radius: 50%;
+    border: 1px solid rgba(128, 128, 128, 0.637);
+    margin: 1em;
+    border-radius: 50%;
+    text-align: center;
+    color: rgba(128, 128, 128, 0.637);
+    line-height: 30px;
+}
+
+.grid-circle {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1em;
+}
+
+.circle-info {
+    width: 100%;
+    margin: 15px;
+    text-align: left;
+}
+
+.final-ico {
+    margin-top: 50px;
+    margin-left: 40px;
+}
+
+.final-ico-circle {
+    width: 30px;
+    height: 30px;
+    background: white;
+    border-radius: 50%;
+    border: 1px solid rgba(22, 167, 34, 0.637);
+    margin: 1em;
+    border-radius: 50%;
+    text-align: center;
+    color: rgba(22, 167, 34, 0.637);
+    line-height: 30px;
+}

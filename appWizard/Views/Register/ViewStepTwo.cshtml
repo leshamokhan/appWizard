@@ -1,0 +1,115 @@
+﻿@model appWizard.Models.StepViewTwo
+
+@{
+    ViewData["Title"] = "New User Registration - STEP 2: Areas";
+    ViewData["Step"] = "STEP 2: Areas";
+}
+
+<nav id="mainNav">
+        <div class="grid-circle">
+            <div class="circle-img">
+                <div class="circle-blue">1</div>
+            </div>
+            <div class="circle-info">
+                Contact Info
+            </div>
+        </div>
+
+        <div class="grid-circle">
+            <div class="circle-img">
+                <div class="circle-blue">✎..</div>
+            </div>
+            <div class="circle-info">
+                Areas
+            </div>
+        </div>
+
+        <div class="grid-circle">
+            <div class="circle-img">
+                <div class="circle-white">3</div>
+            </div>
+            <div class="circle-info">
+                Address
+            </div>
+        </div>
+
+        <div class="grid-circle">
+            <div class="circle-img">
+                <div class="circle-white">4</div>
+            </div>
+            <div class="circle-info">
+                Password
+            </div>
+        </div>
+
+        <div class="grid-circle">
+            <div class="circle-img">
+                <div class="circle-white">5</div>
+            </div>
+            <div class="circle-info">
+                Completed
+            </div>
+        </div>
+    </nav>
+
+    <article id="mainArticle">
+        <form asp-action="ViewStepTwo">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="grid-two">
+                <div class="item-label">
+                    <label class="control-label"><span class="star">*</span> Busineess Areas</label>
+                </div>
+                <div class="item-check">
+                    <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Finance" /> @Html.DisplayNameFor(model => model.Finance)
+                </label>
+                    <br />
+                    <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Operations" /> @Html.DisplayNameFor(model => model.Operations)
+                </label>
+                    <br />
+                    <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IT" /> @Html.DisplayNameFor(model => model.IT)
+                </label>
+                    <br />
+                    <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Sales" /> @Html.DisplayNameFor(model => model.Sales)
+                </label>
+                    <br />
+                    <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Administrative" /> @Html.DisplayNameFor(model => model.Administrative)
+                </label>
+                    <br />
+                    <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Legal" /> @Html.DisplayNameFor(model => model.Legal)
+                </label>
+                    <br />
+                    <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Marketing" /> @Html.DisplayNameFor(model => model.Marketing)
+                </label>
+                </div>
+                <div class="item-valid">@ViewData["CheckedInfo"]
+                </div>
+
+                <div class="item-label">
+                    <label asp-for="Comments" class="control-label"><span class="star">*</span> Comments</label>
+                </div>
+                <div class="item-input">
+                    <textarea asp-for="Comments" class="form-control"></textarea>
+                    <lable class="label-mark">LET US KNOW FOR WHICH NETWORK YOU ARE REQUESTING ACCESS, AND ANY OTHER COMMENTS YOU'D LIKE TO LEAVE US</lable>
+                </div>
+                <div class="item-valid">
+                    <span asp-validation-for="Comments" class="text-danger"></span>
+                </div>
+                <input type="hidden" asp-for="ModelId" />
+            </div>
+            <div class="form-group">
+                <a href='@Url.Action("Create", "Register", new { modelId = Model.ModelId }, null)' class="btn-back">Back</a>
+                <input type="submit" value="NEXT" class="btn-next" />
+            </div>
+        </form>
+    </article>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

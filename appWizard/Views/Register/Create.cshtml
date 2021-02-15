@@ -1,0 +1,195 @@
+﻿@model appWizard.Models.StepViewOne
+
+@{
+    ViewData["Title"] = "New User Registration - STEP 1: Contact Info";
+    ViewData["Step"] = "STEP 1: Contact Info";
+}
+
+<nav id="mainNav">
+        <div class="grid-circle">
+            <div class="circle-img">
+                <div class="circle-blue">✎..</div>
+            </div>
+            <div class="circle-info">
+                Contact Info
+            </div>
+        </div>
+
+        <div class="grid-circle">
+            <div class="circle-img">
+                <div class="circle-white">2</div>
+            </div>
+            <div class="circle-info">
+                Areas
+            </div>
+        </div>
+
+        <div class="grid-circle">
+            <div class="circle-img">
+                <div class="circle-white">3</div>
+            </div>
+            <div class="circle-info">
+                Address
+            </div>
+        </div>
+
+        <div class="grid-circle">
+            <div class="circle-img">
+                <div class="circle-white">4</div>
+            </div>
+            <div class="circle-info">
+                Password
+            </div>
+        </div>
+
+        <div class="grid-circle">
+            <div class="circle-img">
+                <div class="circle-white">5</div>
+            </div>
+            <div class="circle-info">
+                Completed
+            </div>
+        </div>
+    </nav>
+
+    <article id="mainArticle">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="grid-one">
+                <div class="item-label">
+                    <label asp-for="Salutation" class="control-label"><span class="star">*</span> SALUTATION:</label>
+                </div>
+                <div class="item-input">
+                    <select asp-for="Salutation" class="form-control" asp-items="ViewBag.Salutation"></select>
+                </div>
+                <div class="item-valid">
+                    <span asp-validation-for="Salutation" class="text-danger"></span>
+                </div>
+                
+                <div class="item-label">
+                    <label asp-for="Email" class="control-label"><span class="star">*</span> EMAIL:</label>
+                </div>
+                <div class="item-input">
+                    <input asp-for="Email" class="form-control" />
+                    <lable class="label-mark">Email will be your login</lable>
+                </div>
+                <div class="item-valid">
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+
+
+                <div class="item-label">
+                    <label asp-for="FirstName" class="control-label"><span class="star">*</span> FIRST NAME:</label>
+                </div>
+                <div class="item-input">
+                    <input asp-for="FirstName" class="form-control" />
+                </div>
+                <div class="item-valid">
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
+
+
+
+                <div class="item-label">
+                    <label asp-for="ConfirmEmail" class="control-label"><span class="star">*</span> CONFIRM EMAIL:</label>
+                </div>
+                <div class="item-input">
+                    <input asp-for="ConfirmEmail" class="form-control" />
+                </div>
+                <div class="item-valid">
+                    <span asp-validation-for="ConfirmEmail" class="text-danger"></span>
+                </div>
+
+
+
+                <div class="item-label">
+                    <label asp-for="MiddleName" class="control-label">MIDDLE NAME:</label>
+                </div>
+                <div class="item-input">
+                    <input asp-for="MiddleName" class="form-control" />
+                </div>
+                <div class="item-valid">
+                    <span asp-validation-for="MiddleName" class="text-danger"></span>
+                </div>
+
+                <div class="item-label">
+                    <label asp-for="Phone" class="control-label"><span class="star">*</span> PHONE:</label>
+                </div>
+                <div class="item-input">
+                    <input asp-for="Phone" class="form-control" />
+                </div>
+                <div class="item-valid">
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                </div>
+
+
+
+                <div class="item-label">
+                    <label asp-for="LastName" class="control-label"><span class="star">*</span> LAST NAME:</label>
+                </div>
+                <div class="item-input">
+                    <input asp-for="LastName" class="form-control" />
+                </div>
+                <div class="item-valid">
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+
+                <div class="item-label">
+                    <label asp-for="Fax" class="control-label">FAX:</label>
+                </div>
+                <div class="item-input">
+                    <input asp-for="Fax" class="form-control" />
+                </div>
+                <div class="item-valid">
+                    <span asp-validation-for="Fax" class="text-danger"></span>
+                </div>
+
+
+
+                <div class="item-label">
+                    <label asp-for="Company" class="control-label"><span class="star">*</span> COMPANY:</label>
+                </div>
+                <div class="item-input">
+                    <input asp-for="Company" class="form-control" />
+                </div>
+                <div class="item-valid">
+                    <span asp-validation-for="Company" class="text-danger"></span>
+                </div>
+
+                <div class="item-label">
+                    <label asp-for="Mobile" class="control-label">MOBILE:</label>
+                </div>
+                <div class="item-input">
+                    <input asp-for="Mobile" class="form-control" />
+                </div>
+                <div class="item-valid">
+                    <span asp-validation-for="Mobile" class="text-danger"></span>
+                </div>
+
+
+
+                <div class="item-label">
+                    <label asp-for="Title" class="control-label"><span class="star">*</span> TITLE:</label>
+                </div>
+                <div class="item-input">
+                    <input asp-for="Title" class="form-control" />
+                </div>
+                <div class="item-valid">
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+
+                <div class="item-input">
+                    <input type="hidden" asp-for="ModelId" class="form-control" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="NEXT" class="btn-next" />
+            </div>
+        </form>
+    </article>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

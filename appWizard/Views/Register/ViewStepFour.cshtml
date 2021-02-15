@@ -1,0 +1,126 @@
+﻿@model appWizard.Models.StepViewFour
+
+@{
+    ViewData["Title"] = "New User Registration - STEP 4: Password";
+    ViewData["Step"] = "STEP 4: Password";
+}
+
+<nav id="mainNav">
+        <div class="grid-circle">
+            <div class="circle-img">
+                <div class="circle-blue">1</div>
+            </div>
+            <div class="circle-info">
+                Contact Info
+            </div>
+        </div>
+
+        <div class="grid-circle">
+            <div class="circle-img">
+                <div class="circle-blue">2</div>
+            </div>
+            <div class="circle-info">
+                Areas
+            </div>
+        </div>
+
+        <div class="grid-circle">
+            <div class="circle-img">
+                <div class="circle-blue">3</div>
+            </div>
+            <div class="circle-info">
+                Address
+            </div>
+        </div>
+
+        <div class="grid-circle">
+            <div class="circle-img">
+                <div class="circle-blue">✎..</div>
+            </div>
+            <div class="circle-info">
+                Password
+            </div>
+        </div>
+
+        <div class="grid-circle">
+            <div class="circle-img">
+                <div class="circle-white">5</div>
+            </div>
+            <div class="circle-info">
+                Completed
+            </div>
+        </div>
+    </nav>
+
+    <article id="mainArticle" data-toggle-group="location">
+        <form asp-action="ViewStepFour">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="grid-three">
+                <div class="item-label">
+                    <label asp-for="Password"><span class="star">*</span> PASSWORD:</label>
+                </div>
+                <div class="item-input">
+                    <input asp-for="Password" class="form-control" />
+                </div>
+                <div class="item-valid">
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+
+                <div class="item-label">
+                    <label asp-for="ConfirmPassword"><span class="star">*</span> CONFIRM PASSWORD:</label>
+                </div>
+                <div class="item-input">
+                    <input asp-for="ConfirmPassword" class="form-control" />
+                </div>
+                <div class="item-valid">
+                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                </div>
+
+                <div class="item-label">
+                    <label><span class="star">*</span> CAPTCHA:</label>
+                </div>
+                <div class="item-input">
+                    <dnt-captcha asp-captcha-generator-max="99" asp-captcha-generator-min="10" asp-captcha-generator-language="English" asp-captcha-generator-display-mode="SumOfTwoNumbers" asp-use-relative-urls="true" asp-placeholder="Security code as a number" asp-validation-error-message="Please enter the security code as a number."
+                        asp-font-name="Tahoma" asp-font-size="60" asp-fore-color="#333333" asp-back-color="#ccc" asp-text-box-class="text-box form-control" asp-text-box-template="<div class='input-group'><span class='input-group-addon'><span class='glyphicon glyphicon-lock'></span></span>{0}</div>"
+                        asp-validation-message-class="label-mark" asp-refresh-button-class="glyphicon glyphicon-refresh btn-sm" asp-use-noise="true" />
+                </div>
+                <div class="item-valid">
+                </div>
+
+                <div class="item-label">
+                </div>
+                <div class="item-input">
+                    <input type="checkbox" class="form-check-input" asp-for="Accept" />
+                    <label asp-for="Accept" class="label-mark"></label>
+                </div>
+                <div class="item-valid">
+                    <span asp-validation-for="Accept" class="text-danger"></span>
+                </div>
+
+                <div class="item-input">
+                    <input type="hidden" asp-for="ModelId" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <a href='@Url.Action("ViewStepThree", "Register", new { modelId = Model.ModelId }, null)' class="btn-back">Back</a>
+                <input type="submit" value="Next" class="btn-next" />
+            </div>
+        </form>
+    </article>
+
+@section Scripts {  
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script>
+        var defaultRangeValidator = $.validator.methods.range;
+        $.validator.methods.range = function(value, element, param) {
+            if(element.type === 'checkbox') {
+                return element.checked;
+            } else {
+                return defaultRangeValidator.call(this, value, element, param);
+            }
+        }
+    </script>
+}		

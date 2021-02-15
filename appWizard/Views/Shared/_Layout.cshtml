@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <script src="~/js/countries.js"></script>
+</head>
+<body>
+    <header id="pageHeader">
+        <div class="headerStep">
+            <h1>New User Registration</h1>
+            <h4>@ViewData["Step"]</h4>
+        </div>
+    </header>
+    @RenderBody()
+<footer id="pageFooter">CORAL MULTI-SIDED PLATFORM 2.6 Liquid Demo</footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

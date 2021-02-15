@@ -1,0 +1,67 @@
+﻿@{
+    ViewData["Title"] = "New User Registration - STEP 5: Completed";
+    ViewData["Step"] = "STEP 5: Completed";
+}
+
+<nav id="mainNav">
+        <div class="grid-circle">
+            <div class="circle-img">
+                <div class="circle-blue">1</div>
+            </div>
+            <div class="circle-info">
+                Contact Info
+            </div>
+        </div>
+
+        <div class="grid-circle">
+            <div class="circle-img">
+                <div class="circle-blue">2</div>
+            </div>
+            <div class="circle-info">
+                Areas
+            </div>
+        </div>
+
+        <div class="grid-circle">
+            <div class="circle-img">
+                <div class="circle-blue">3</div>
+            </div>
+            <div class="circle-info">
+                Address
+            </div>
+        </div>
+
+        <div class="grid-circle">
+            <div class="circle-img">
+                <div class="circle-blue">4</div>
+            </div>
+            <div class="circle-info">
+                Password
+            </div>
+        </div>
+
+        <div class="grid-circle">
+            <div class="circle-img">
+                <div class="circle-blue">✎..</div>
+            </div>
+            <div class="circle-info">
+                Completed
+            </div>
+        </div>
+    </nav>
+
+    <article id="mainArticle">
+        <div class="grid-final">
+            <div class="final-ico">
+                <div class="final-ico-circle">✔</div>
+            </div>
+            <div class="item-label-final">
+                <h2>Thank you for registering!</h2>
+                <h5>A registration confirmation email was sent to the email address provided. Your registration will be sent for approval and activation to the Administrator. You will receive an email when your account is ready to use.</h5>
+            </div>
+        </div>
+    </article>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
